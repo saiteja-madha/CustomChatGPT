@@ -8,7 +8,7 @@ import CrossIcon from '@icon/CrossIcon';
 const ApiPopup = () => {
   const { t } = useTranslation(['main', 'api']);
 
-  const apiKey = useStore((state) => state.apiKey);
+  const apiKey = useStore((state) => state.user?.apiKey);
   const setApiKey = useStore((state) => state.setApiKey);
   const firstVisit = useStore((state) => state.firstVisit);
   const setFirstVisit = useStore((state) => state.setFirstVisit);

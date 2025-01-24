@@ -17,7 +17,7 @@ const ApiMenu = ({
 }) => {
   const { t } = useTranslation(['main', 'api']);
 
-  const apiKey = useStore((state) => state.apiKey);
+  const apiKey = useStore((state) => state.user?.apiKey);
   const setApiKey = useStore((state) => state.setApiKey);
   const apiEndpoint = useStore((state) => state.apiEndpoint);
   const setApiEndpoint = useStore((state) => state.setApiEndpoint);

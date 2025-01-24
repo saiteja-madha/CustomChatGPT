@@ -4,6 +4,7 @@ import i18n from './i18n';
 
 import Chat from '@components/Chat';
 import Menu from '@components/Menu';
+import AuthGuard from '@components/Auth/AuthGuard';
 
 import useInitialiseNewChat from '@hooks/useInitialiseNewChat';
 import { ChatInterface } from '@type/chat';
@@ -75,13 +76,16 @@ function App() {
   }, []);
 
   return (
-    <div className='overflow-hidden w-full h-full relative'>
-      <Menu />
-      <Chat />
-      <ApiPopup />
-      <Toast />
-    </div>
+    <AuthGuard>
+      <div className='overflow-hidden w-full h-full relative'>
+        <Menu />
+        <Chat />
+        <ApiPopup />
+        <Toast />
+      </div>
+    </AuthGuard>
   );
 }
 
 export default App;
+
